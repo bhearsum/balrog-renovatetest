@@ -3,13 +3,17 @@
   "extends": [
     "config:best-practices"
   ],
+  // remove automatic grouping; this prevents us from grouping, eg: all frontend dependencies together
   "ignorePresets": ["group:monorepos", "group:recommended"],
   "packageRules": [
+    // group all non-major python dependencies together
+    // major dependency bumps will bypass this, and each get their own PR
     {
       "matchManagers": ["pep621"],
       "matchUpdateTypes": ["patch", "minor"],
       "groupName": "python dependencies"
     },
+    // group all JS dependencies together
     {
       "matchManagers": ["npm"],
       "groupName": "js dependencies"
