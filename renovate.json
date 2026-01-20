@@ -5,12 +5,12 @@
   ],
   "packageRules": [
     {
-      "matchFileNames": ["pyproject.toml", "uv.lock"],
-      "labels": ["balrog-python"]
+      "matchManagers": ["pep621"],
+      "labels": ["backend"]
     },
     {
-      "matchFileNames": ["ui/package.json", "ui/yarn.lock"],
-      "labels": ["balrog-frontend"]
+      "matchManagers": ["npm"],
+      "labels": ["frontend"]
     }
   ]
 }
